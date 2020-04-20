@@ -36,6 +36,11 @@ stages:
       #Invoke tests here
     test_type: simple
     type: tester
+  - docker_image: toto
+    name: Custom Docker Image Test
+    script: ""
+    test_type: customimage
+    type: tester
   name: TEST_EXTENSION
   properties:
   - name: CF_APP_NAME
