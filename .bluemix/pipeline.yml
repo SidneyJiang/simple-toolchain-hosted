@@ -20,24 +20,17 @@ stages:
     stage: BUILD
     type: job
   jobs:
-  - deploy_permission: DEV_IN_SPACE
-    deploy_type: cf
-    name: Deploy
-    script: |
-      #!/bin/bash
-      # Push app
-      export CF_APP_NAME="$CF_APP"
-      cf push "${CF_APP_NAME}"
-      export APP_URL=http://$(cf app $CF_APP_NAME | grep -e urls: -e routes: | awk '{print $2}')
-      # View logs
-      #cf logs "${CF_APP_NAME}" --recent
+  - name: Test
+    type: tester
+    extension_id: ibm.devops.services.pipeline.bluemix.simplified.shell
     target:
-      application: simple-toolchain-20200317155509148
-      organization: majarvisusibmcom
-      region_id: w3ibm:prod:us-south
+      region_id: ibm:ys1:us-south
+      organization: xinyij@ca.ibm.com
       space: dev
-    type: deployer
-  name: DEPLOY
+    COMMAND: |-
+      #!/bin/bash
+      # invoke tests here
+  name: TEST_EXTENSION
   properties:
   - name: CF_APP_NAME
     type: text
