@@ -30,6 +30,12 @@ stages:
     COMMAND: |-
       #!/bin/bash
       # invoke tests here
+  - name: Simple Test
+    script: |-
+      #!/bin/bash
+      #Invoke tests here
+    test_type: simple
+    type: tester
   name: TEST_EXTENSION
   properties:
   - name: CF_APP_NAME
