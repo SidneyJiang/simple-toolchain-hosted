@@ -22,7 +22,7 @@ stages:
   jobs:
   - name: Test
     type: tester
-    extension_id: ibm.devops.services.pipeline.bluemix.simplified.shell
+    extension_id: ibm.devops.services.pipeline.container.builder
     target:
       region_id: ibm:ys1:us-south
       organization: xinyij@ca.ibm.com
