@@ -20,9 +20,12 @@ stages:
     stage: BUILD
     type: job
   jobs:
-  - name: Test
-    type: tester
+  - name: IBM Container Registry Build
+    type: builder
     extension_id: ibm.devops.services.pipeline.container.builder
+    IMAGE_NAME: toto
+    USE_CACHED_LAYERS: "true"
+    deploy_permission: DEV_IN_SPACE
     target:
       region_id: ibm:ys1:us-south
       organization: xinyij@ca.ibm.com
