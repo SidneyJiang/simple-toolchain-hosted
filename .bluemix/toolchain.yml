@@ -40,6 +40,10 @@ toolchain:
     getting_started:
       $ref: "#/messages/template.gettingStarted"
 services:
+  privateWorker:
+    service_id: private_worker
+    parameters:
+      name: private-worker
   sample-repo:
     service_id: >
       $env.source_provider ? $env.source_provider : 'hostedgit'
