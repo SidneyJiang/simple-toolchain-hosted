@@ -9,6 +9,7 @@ stages:
     name: Build
     type: builder
   name: BUILD
+  worker: private-worker
   properties:
   - name: secureTest
     type: secure
