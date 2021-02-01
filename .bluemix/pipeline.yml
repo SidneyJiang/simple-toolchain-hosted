@@ -2,7 +2,7 @@
 ---
 defaultBaseImageVersion: latest
 properties: null
-private_worker: private-worker
+private_worker: privateWorker
 stages:
 - inputs:
   - branch: master
@@ -14,7 +14,7 @@ stages:
     name: Build
     type: builder
   name: BUILD
-  private_worker: private-worker
+  private_worker: privateWorker
   properties:
   - name: secureTest
     type: secure
