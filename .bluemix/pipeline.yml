@@ -9,7 +9,7 @@ stages:
     name: Build
     type: builder
   name: BUILD
-  worker: private-worker
+  private_worker: private-worker
   properties:
   - name: secureTest
     type: secure
@@ -56,3 +56,4 @@ stages:
   triggers:
   - type: stage
 properties: null
+private_worker: private-worker
